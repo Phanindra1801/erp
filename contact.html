@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Faculty ERP</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <link href="assets/img/logo.jpg" rel="icon">
+    <link href="assets/img/logo.jpg" rel="apple-touch-icon">
+
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Poppins:wght@100;300;400;500;600;700;800;900&family=Raleway:wght@100;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <link href="assets/css/main.css" rel="stylesheet">
+</head>
+
+<body class="index-page">
+
+    <header id="header" class="header dark-background d-flex flex-column">
+        <i class="header-toggle d-xl-none bi bi-list"></i>
+    
+        <div class="profile-img">
+          <img src="assets/img/logo.jpg" alt="" class="img-fluid rounded-circle">
+        </div>
+    
+        <a href="index.html" class="logo d-flex align-items-center justify-content-center">
+          <h1 class="sitename">Faculty - J Surya Kiran</h1>
+        </a>
+    
+        <nav id="navmenu" class="navmenu">
+            <ul>
+              <li>
+                <a href="home.html" class="active"><i class="bi bi-house navicon"></i> Home</a>
+          
+              </li>
+              <li class="dropdown">
+                <a href="Attendance.html"><i class="bi bi-person navicon"></i> Attendance marking </a>
+              </li>
+              <li>
+                <a href="Courses.html"><i class="bi bi-file-earmark-text navicon"></i> My Courses</a>
+              </li>
+              <li>
+                <a href="#correction"><i class="bi bi-images navicon"></i> Paper Correction</a>
+              </li>
+              <li>
+                <a href="Students.html"><i class="bi bi-hdd-stack navicon"></i> View Students</a>
+              </li>
+              <li class="dropdown">
+                <a href="contact.html"><i class="bi bi-envelope navicon"></i> Contact Officials</a>
+              </li>
+              <li></li>
+                <a href="login.html"><i class="bi bi-hdd-stack navicon"></i>Log Out</a>
+              </li>
+            </ul>
+          </nav>
+        
+        
+    
+      </header>
+
+<main class="main">
+
+    <section id="contact" class="contact section">
+
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+          <div class="row gy-4">
+            <div class="col-lg-5">
+              <div class="info-wrap">
+                <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
+                  <i class="bi bi-geo-alt flex-shrink-0"></i>
+                  <div>
+                    <h3>Address</h3>
+                    <p>KL University, Vaddeswaram, 522302</p>
+                  </div>
+                </div>
+  
+                <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
+                  <i class="bi bi-telephone flex-shrink-0"></i>
+                  <div>
+                    <h3>Call Us</h3>
+                    <p>+91 9638527410</p>
+                  </div>
+                </div><!-- End Info Item -->
+  
+                <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
+                  <i class="bi bi-envelope flex-shrink-0"></i>
+                  <div>
+                    <h3>Email Us</h3>
+                    <p>erp@gmail.com</p>
+                  </div>
+                </div><!-- End Info Item -->
+  
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8186.889406694244!2d80.62156341657557!3d16.442021050597393!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a35f0a2a7d81943%3A0x8ba5d78f65df94b8!2sK%20L%20E%20F%20Deemed%20To%20Be%20University!5e1!3m2!1sen!2sin!4v1727896008499!5m2!1sen!2sin"></iframe>"></iframe>
+              </div>
+            </div>
+  
+            <div class="col-lg-7">
+              <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+                <div class="row gy-4">
+  
+                  <div class="col-md-6">
+                    <label for="name-field" class="pb-2">Your Name</label>
+                    <input type="text" name="name" id="name-field" class="form-control" required="">
+                  </div>
+  
+                  <div class="col-md-6">
+                    <label for="email-field" class="pb-2">Your Email</label>
+                    <input type="email" class="form-control" name="email" id="email-field" required="">
+                  </div>
+  
+                  <div class="col-md-12">
+                    <label for="subject-field" class="pb-2">Subject</label>
+                    <input type="text" class="form-control" name="subject" id="subject-field" required="">
+                  </div>
+  
+                  <div class="col-md-12">
+                    <label for="message-field" class="pb-2">Message</label>
+                    <textarea class="form-control" name="message" rows="10" id="message-field" required=""></textarea>
+                  </div>
+  
+                  <div class="col-md-12 text-center">
+                    <div class="loading">Loading</div>
+                    <div class="error-message"></div>
+                    <div class="sent-message">Your message has been sent. Thank you!</div>
+  
+                    <button type="submit">Send Message</button>
+                  </div>
+  
+                </div>
+              </form>
+            </div>
+  
+          </div>
+  
+        </div>
+  
+      </section>
+  
+    
+
+    <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+</main>
+
+<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="assets/vendor/aos/aos.js"></script>
+<script src="assets/vendor/typed.js/typed.umd.js"></script>
+<script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

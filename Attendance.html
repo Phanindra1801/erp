@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Admin ERP</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <link href="assets/img/logo.jpg" rel="icon">
+    <link href="assets/img/logo.jpg" rel="apple-touch-icon">
+
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Poppins:wght@100;300;400;500;600;700;800;900&family=Raleway:wght@100;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <link href="assets/css/main.css" rel="stylesheet">
+</head>
+
+<body class="index-page">
+
+    <header id="header" class="header dark-background d-flex flex-column">
+        <i class="header-toggle d-xl-none bi bi-list"></i>
+    
+        <div class="profile-img">
+          <img src="assets/img/logo.jpg" alt="" class="img-fluid rounded-circle">
+        </div>
+    
+        <a href="index.html" class="logo d-flex align-items-center justify-content-center">
+          <h1 class="sitename">Faculty - J Surya Kiran</h1>
+        </a>
+    
+        <nav id="navmenu" class="navmenu">
+            <ul>
+              <li>
+                <a href="home.html" class="active"><i class="bi bi-house navicon"></i> Home</a>
+          
+              </li>
+              <li class="dropdown">
+                <a href="Attendance.html"><i class="bi bi-person navicon"></i> Attendance marking </a>
+              </li>
+              <li>
+                <a href="Courses.html"><i class="bi bi-file-earmark-text navicon"></i> My Courses</a>
+              </li>
+              <li>
+                <a href="#correction"><i class="bi bi-images navicon"></i> Paper Correction</a>
+              </li>
+              <li>
+                <a href="Students.html"><i class="bi bi-hdd-stack navicon"></i> View Students</a>
+              </li>
+              <li class="dropdown">
+                <a href="contact.html"><i class="bi bi-envelope navicon"></i> Contact Officials</a>
+              </li>
+              <li></li>
+                <a href="login.html"><i class="bi bi-hdd-stack navicon"></i>Log Out</a>
+              </li>
+            </ul>
+          </nav>
+        
+        
+    
+      </header>
+
+<main class="main">
+
+    <!-- About Section -->
+<section id="students" class="students section">
+    <!-- Section Title -->
+    <div class="container section-title" data-aos="fade-up">
+      <h2>Student List</h2>
+      <p>Please select the year of the batch to view the students.</p>
+    </div><!-- End Section Title -->
+  
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+      <!-- Year Selection Form -->
+      <div class="row gy-4 justify-content-center">
+        <div class="col-lg-8 content">
+          <form id="batchForm">
+            <label for="batchYear"><strong>Select Section :</strong></label>
+            <select id="batchYear" class="form-control">
+              <option value="" selected disabled>Select Section</option>
+              <option value="21">Section - 21</option>
+              <option value="31">Section - 31</option>
+              <option value="41">Section - 41</option>
+              <option value="51">Section - 51</option>
+            </select>
+            <label for="attendanceDate"><strong>Date :</strong></label>
+            <input type="date" class="form-control" id="attendanceDate" required>
+            <button type="button" onclick="showStudents()" class="btn btn-primary mt-3">Submit</button>
+          </form>
+        </div>
+      </div>
+  
+      <!-- Students List (Initially Hidden) -->
+      <div class="row gy-4 justify-content-center mt-4" id="studentsList" style="display: none;">
+        <div class="col-lg-12 content">
+          <h2>Students of Batch <span id="selectedBatch"></span></h2>
+  
+          <!-- Students Card -->
+          <div class="students-card">
+            <div class="student-list">
+              <ul id="studentList"></ul>
+            </div>
+            <button class="btn btn-success save-btn">Save</button>
+          </div>
+        </div>
+      </div>
+  
+    </div>
+  
+    <script>
+      function showStudents() {
+        const batchYear = document.getElementById("batchYear").value;
+        const studentsList = document.getElementById("studentsList");
+        const selectedBatch = document.getElementById("selectedBatch");
+        const studentList = document.getElementById("studentList");
+  
+        if (batchYear) {
+          selectedBatch.textContent = batchYear;
+          studentList.innerHTML = ''; // Clear previous list
+  
+          // Example student data
+          const students = {
+            "21": ["Alice Johnson", "Raju", "Sita", "Nina", "Rahul", "John", "Steve", "Maya", "Amir", "Rita", "Suman", "Suresh", "Srinivas", "Deepa", "Nisha", "Ajay", "Krishna", "Vijay", "Pooja", "Anita", "Babu", "Geeta", "Kiran", "Meena", "Ravi"],
+            "31": ["David Williams", "Ravi", "Rani", "Seema", "Lata", "Kumar", "Aditi", "Nikhil", "Sonia", "Neha", "Tarun", "Nitin", "Shruti", "Vikram", "Sandeep", "Geeta", "Asha", "Karan", "Dinesh", "Sunil", "Amita", "Pankaj", "Suman", "Pallavi", "Vijaya"],
+            "41": ["George Clark", "Hannah Adams", "Jack", "Sonali", "Arjun", "Gaurav", "Nikhil", "Harish", "Sandeep", "Komal", "Kavita", "Rohan", "Anju", "Puneet", "Kajal", "Manish", "Neeraj", "Chaitanya", "Aditya", "Vikas", "Sagar", "Devendra", "Rupesh", "Simran", "Trisha"],
+            "51": ["Jack Davis", "Karen White", "Siddharth", "Parul", "Sonia", "Pritam", "Rajeev", "Sonali", "Amit", "Gaurav", "Nitin", "Neelam", "Piyush", "Tanya", "Ishita", "Kushal", "Samar", "Yash", "Zara", "Alok", "Krishna", "Deepak", "Bipin", "Kiran", "Nina", "Suman"]
+          };
+  
+          // Populate the list with student data
+          if (students[batchYear]) {
+            students[batchYear].forEach((student, index) => {
+              const listItem = document.createElement("li");
+              listItem.innerHTML = `
+                <span>${index + 1}. ${student}</span>
+                <input type="checkbox" class="student-checkbox" />
+              `;
+              studentList.appendChild(listItem);
+            });
+          }
+  
+          studentsList.style.display = 'block'; // Show the students list
+        } else {
+          alert("Please select a batch year.");
+        }
+      }
+    </script>
+  
+    <style>
+      .students-card {
+        background-color: #e9ecef; /* Light gray background */
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        margin-top: 20px;
+      }
+  
+      .student-list {
+        list-style-type: none;
+        padding: 0;
+      }
+  
+      .student-list li {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
+        color: black;
+      }
+  
+      .student-checkbox {
+        accent-color: red; /* Checkbox color */
+        margin-left: 10px;
+      }
+  
+      .save-btn {
+        display: block;
+        margin: 20px auto; /* Center the button */
+        background-color: green;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+  
+      .save-btn:hover {
+        background-color: darkgreen;
+      }
+    </style>
+  
+  </section><!-- /Students Section -->
+  
+    
+
+    <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+</main>
+
+<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="assets/vendor/aos/aos.js"></script>
+<script src="assets/vendor/typed.js/typed.umd.js"></script>
+<script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

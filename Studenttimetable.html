@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Student ERP</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <link href="assets/img/logo.jpg" rel="icon">
+    <link href="assets/img/logo.jpg" rel="apple-touch-icon">
+
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Poppins:wght@100;300;400;500;600;700;800;900&family=Raleway:wght@100;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <link href="assets/css/main.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            color: #343a40;
+        }
+
+        table {
+            border-collapse: collapse;
+            margin: 20px auto;
+            background-color: #fff;
+            border: 2px solid #dee2e6;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        th,
+        td {
+            border: 1px solid #dee2e6;
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f2f2f2;
+            color: #343a40;
+        }
+
+        .highlight {
+            background-color: #f8f9fa;
+        }
+
+        .special {
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+
+<body class="index-page">
+
+    <header id="header" class="header dark-background d-flex flex-column">
+        <i class="header-toggle d-xl-none bi bi-list"></i>
+
+        <div class="profile-img">
+            <img src="assets/img/logo.jpg" alt="" class="img-fluid rounded-circle">
+        </div>
+
+        <a href="Studenthome.html" class="logo d-flex align-items-center justify-content-center">
+            <h1 class="sitename">Student - Phanindra</h1>
+        </a>
+
+        <nav id="navmenu" class="navmenu">
+            <ul>
+                <li>
+                    <a href="Studenthome.html" class="active"><i class="bi bi-house navicon"></i> Home</a>
+                </li>
+                <li class="dropdown">
+                    <a href="Studentcourses.html"><i class="bi bi-person navicon"></i>Courses </a>
+                </li>
+                <li>
+                    <a href="StudentAttendance.html"><i class="bi bi-file-earmark-text navicon"></i>Attendance</a>
+                </li>
+                <li>
+                    <a href="StudentSports.html"><i class="bi bi-images navicon"></i>Sports</a>
+                </li>
+                <li>
+                    <a href="StudentProfile.html"><i class="bi bi-hdd-stack navicon"></i>Profile</a>
+                </li>
+                <li class="dropdown">
+                    <a href="StudentFeedback.html"><i class="bi bi-envelope navicon"></i>Feedback</a>
+                </li>
+                <li>
+                    <a href="Studentfee.html"><i class="bi bi-images navicon"></i>Fee Payment</a>
+                </li>
+                <li>
+                    <a href="Studenttimetable.html"><i class="bi bi-hdd-stack navicon"></i>Time Table</a>
+                </li>
+                <li>
+                    <a href="login.html"><i class="bi bi-hdd-stack navicon"></i>Log Out</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main">
+
+        <h1>TIME TABLE</h1>
+        <table>
+            <tr>
+                <th>Day/Period</th>
+                <th>I<br>9:30-10:20</th>
+                <th>II<br>10:20-11:10</th>
+                <th>III<br>11:10-12:00</th>
+                <th>12:00-12:40</th>
+                <th>IV<br>12:40-1:30</th>
+                <th>V<br>1:30-2:20</th>
+                <th>VI<br>2:20-3:10</th>
+                <th>VII<br>3:10-4:00</th>
+            </tr>
+            <tr>
+                <td class="highlight"><b>Monday</b></td>
+                <td>JFSD</td>
+                <td>Maths</td>
+                <td>CACD</td>
+                <td rowspan="6" class="special"><b>LUNCH</b></td>
+                <td colspan="3" class="special">LAB</td>
+                <td>Phy</td>
+            </tr>
+            <tr>
+                <td class="highlight"><b>Tuesday</b></td>
+                <td colspan="3" class="special">LAB</td>
+                <td>Eng</td>
+                <td>JFSD</td>
+                <td>Mat</td>
+                <td class="special">SPORTS</td>
+            </tr>
+            <tr>
+                <td class="highlight"><b>Wednesday</b></td>
+                <td>Mat</td>
+                <td>Phy</td>
+                <td>Eng</td>
+                <td>JFSD</td>
+                <td colspan="3">LIBRARY</td>
+            </tr>
+            <tr>
+                <td class="highlight"><b>Thursday</b></td>
+                <td>Phy</td>
+                <td>Maths</td>
+                <td>JFSD</td>
+                <td colspan="3" class="special">LAB</td>
+                <td>EP</td>
+            </tr>
+            <tr>
+                <td class="highlight"><b>Friday</b></td>
+                <td colspan="3" class="special">LAB</td>
+                <td>EP</td>
+                <td>PFSD</td>
+                <td>Eng</td>
+                <td>Phy</td>
+            </tr>
+            <tr>
+                <td class="highlight"><b>Saturday</b></td>
+                <td>EP</td>
+                <td>MSWD</td>
+                <td>Mat</td>
+                <td colspan="3">SEMINAR</td>
+                <td class="special">SPORTS</td>
+            </tr>
+        </table>
+
+        <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    </main>
+
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/typed.js/typed.umd.js"></script>
+    <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

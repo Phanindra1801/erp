@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Student ERP</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <link href="assets/img/logo.jpg" rel="icon">
+    <link href="assets/img/logo.jpg" rel="apple-touch-icon">
+
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Poppins:wght@100;300;400;500;600;700;800;900&family=Raleway:wght@100;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <link href="assets/css/main.css" rel="stylesheet">
+
+    <style>
+        .update-section {
+          background-color: white;
+          color: black;
+          display: flex;
+          align-items: flex-start;
+          justify-content: center;
+          min-height: 100vh;
+        }
+    
+        .form-container {
+          text-align: center;
+          width: 100%;
+          max-width: 600px;
+          margin: 0 auto;
+        }
+    
+        .form-container input[type="text"], .form-container input[type="email"], .form-container input[type="tel"] {
+          width: 100%;
+          padding: 10px;
+          margin: 10px 0;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+        }
+    
+        .form-container input[type="submit"] {
+          background-color: #008cba;
+          color: white;
+          border: none;
+          padding: 10px 20px;
+          cursor: pointer;
+          border-radius: 5px;
+          margin-top: 20px;
+        }
+    
+        .form-container input[type="submit"]:hover {
+          background-color: #005f5f;
+        }
+      </style>
+</head>
+
+<body class="index-page">
+
+    <header id="header" class="header dark-background d-flex flex-column">
+        <i class="header-toggle d-xl-none bi bi-list"></i>
+    
+        <div class="profile-img">
+          <img src="assets/img/logo.jpg" alt="" class="img-fluid rounded-circle">
+        </div>
+    
+        <a href="Studenthome.html" class="logo d-flex align-items-center justify-content-center">
+          <h1 class="sitename">Student - Phanindra</h1>
+        </a>
+    
+        <nav id="navmenu" class="navmenu">
+            <ul>
+              <li>
+                <a href="Studenthome.html" class="active"><i class="bi bi-house navicon"></i> Home</a>
+          
+              </li>
+              <li class="dropdown">
+                <a href="Studentcourses.html"><i class="bi bi-person navicon"></i>Courses </a>
+              </li>
+              <li>
+                <a href="StudentAttendance.html"><i class="bi bi-file-earmark-text navicon"></i>Attendance</a>
+              </li>
+              <li>
+                <a href="StudentSports.html"><i class="bi bi-images navicon"></i>Sports</a>
+              </li>
+              <li>
+                <a href="StudentProfile.html"><i class="bi bi-hdd-stack navicon"></i>Profile</a>
+              </li>
+              <li class="dropdown">
+                <a href="StudentFeedback.html"><i class="bi bi-envelope navicon"></i>Feedback</a>
+              </li>
+              <li class="dropdown"></li>
+                <a href="Studentfee.html"><i class="bi bi-images navicon"></i>Fee Payment</a>
+              </li>
+              <li>
+                <a href="Studenttimetable.html"><i class="bi bi-hdd-stack navicon"></i>Time Table</a>
+              </li>
+              <li></li>
+                <a href="login.html"><i class="bi bi-hdd-stack navicon"></i>Log Out</a>
+              </li>
+            </ul>
+          </nav>
+        
+        
+    
+      </header>
+
+<main class="main">
+    <section id="details" class="update-section">
+        <div class="form-container">
+          <h3>Update Profile Details</h3>
+          
+          <form action="#" method="POST">
+            <input type="text" name="fname" placeholder="First Name" required>
+            <input type="text" name="lname" placeholder="Last Name" required>
+            <input type="text" name="gender" placeholder="Gender" required>
+            <input type="text" name="department" placeholder="Department" required>
+            <input type="text" name="DOB" placeholder="Date of Birth" required>
+            <input type="text" name="mothername" placeholder="Mother Name" required>
+            <input type="text" name="fathername" placeholder="father Name" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="tel" name="contact" placeholder="Contact Number" required>
+            <input type="text" name="address" placeholder="Address" required>
+            
+            <input type="submit" value="Update">
+          </form>
+        </div>
+      </section>
+
+
+    <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+</main>
+
+<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="assets/vendor/aos/aos.js"></script>
+<script src="assets/vendor/typed.js/typed.umd.js"></script>
+<script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

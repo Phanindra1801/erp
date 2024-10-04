@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Student ERP</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <link href="assets/img/logo.jpg" rel="icon">
+    <link href="assets/img/logo.jpg" rel="apple-touch-icon">
+
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Poppins:wght@100;300;400;500;600;700;800;900&family=Raleway:wght@100;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <link href="assets/css/main.css" rel="stylesheet">
+</head>
+
+<body class="index-page">
+
+    <header id="header" class="header dark-background d-flex flex-column">
+        <i class="header-toggle d-xl-none bi bi-list"></i>
+    
+        <div class="profile-img">
+          <img src="assets/img/logo.jpg" alt="" class="img-fluid rounded-circle">
+        </div>
+    
+        <a href="Studenthome.html" class="logo d-flex align-items-center justify-content-center">
+          <h1 class="sitename">Student - Phanindra</h1>
+        </a>
+    
+        <nav id="navmenu" class="navmenu">
+            <ul>
+              <li>
+                <a href="Studenthome.html" class="active"><i class="bi bi-house navicon"></i> Home</a>
+          
+              </li>
+              <li class="dropdown">
+                <a href="Studentcourses.html"><i class="bi bi-person navicon"></i>Courses </a>
+              </li>
+              <li>
+                <a href="StudentAttendance.html"><i class="bi bi-file-earmark-text navicon"></i>Attendance</a>
+              </li>
+              <li>
+                <a href="StudentSports.html"><i class="bi bi-images navicon"></i>Sports</a>
+              </li>
+              <li>
+                <a href="StudentProfile.html"><i class="bi bi-hdd-stack navicon"></i>Profile</a>
+              </li>
+              <li class="dropdown">
+                <a href="StudentFeedback.html"><i class="bi bi-envelope navicon"></i>Feedback</a>
+              </li>
+              <li class="dropdown"></li>
+                <a href="Studentfee.html"><i class="bi bi-images navicon"></i>Fee Payment</a>
+              </li>
+              <li>
+                <a href="Studenttimetable.html"><i class="bi bi-hdd-stack navicon"></i>Time Table</a>
+              </li>
+              <li></li>
+                <a href="login.html"><i class="bi bi-hdd-stack navicon"></i>Log Out</a>
+              </li>
+            </ul>
+          </nav>
+        
+        
+    
+      </header>
+
+<main class="main">
+    <section id="student-attendance" class="student-attendance section">
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+            <h2>View Attendance</h2>
+            <p>Select a date to view your attendance for that day.</p>
+        </div>
+
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+            <!-- Date Selection Form -->
+            <div class="row gy-4 justify-content-center">
+                <div class="col-lg-8 content">
+                    <form id="attendanceForm">
+                        <label for="attendanceDate"><strong>Date :</strong></label>
+                        <input type="date" class="form-control" id="attendanceDate" required>
+                        <button type="button" onclick="showAttendance()" class="btn btn-primary mt-3">View Attendance</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Attendance List (Initially Hidden) -->
+            <div class="row gy-4 justify-content-center mt-4" id="attendanceList" style="display: none;">
+                <div class="col-lg-12 content">
+                    <h2>Attendance for <span id="selectedDate"></span></h2>
+
+                    <!-- Attendance Table -->
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Subject</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="attendanceTable">
+                            <!-- Rows will be dynamically generated -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+
+        <script>
+            // Example attendance data for a student on different dates and subjects
+            const attendanceData = {
+                "2024-10-01": {
+                    "Mathematics": "Present",
+                    "Physics": "Absent",
+                    "Chemistry": "Present",
+                    "Computer Science": "Present",
+                    "English": "Absent"
+                },
+                "2024-10-02": {
+                    "Mathematics": "Absent",
+                    "Physics": "Present",
+                    "Chemistry": "Absent",
+                    "Computer Science": "Absent",
+                    "English": "Present"
+                }
+                // You can add more dates and attendance data as needed
+            };
+
+            function showAttendance() {
+                const attendanceDate = document.getElementById("attendanceDate").value;
+                const attendanceList = document.getElementById("attendanceList");
+                const selectedDate = document.getElementById("selectedDate");
+                const attendanceTable = document.getElementById("attendanceTable");
+
+                if (attendanceDate && attendanceData[attendanceDate]) {
+                    selectedDate.textContent = attendanceDate;
+                    attendanceTable.innerHTML = ''; // Clear previous data
+
+                    // Populate attendance table
+                    const subjects = attendanceData[attendanceDate];
+                    for (const [subject, status] of Object.entries(subjects)) {
+                        const row = `<tr>
+                            <td>${subject}</td>
+                            <td>${status}</td>
+                        </tr>`;
+                        attendanceTable.innerHTML += row;
+                    }
+
+                    attendanceList.style.display = 'block'; // Show attendance list
+                } else {
+                    alert("No attendance data available for the selected date.");
+                }
+            }
+        </script>
+
+        <style>
+            .section-title {
+                text-align: center;
+                margin-bottom: 40px;
+            }
+
+            .table {
+                width: 90%;
+                margin: 20px auto;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+                background-color: white;
+            }
+
+            thead {
+                background-color: #008cba;
+                color: white;
+            }
+
+            th, td {
+                padding: 10px;
+                text-align: left;
+            }
+        </style>
+    </section>
+
+
+    <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+</main>
+
+<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="assets/vendor/aos/aos.js"></script>
+<script src="assets/vendor/typed.js/typed.umd.js"></script>
+<script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

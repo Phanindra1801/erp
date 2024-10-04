@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Administrator ERP</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <link href="assets/img/logo.jpg" rel="icon"> 
+  <link href="assets/img/logo.jpg" rel="apple-touch-icon">
+
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/css/main.css" rel="stylesheet">
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header dark-background d-flex flex-column">
+    <i class="header-toggle d-xl-none bi bi-list"></i>
+
+    <div class="profile-img">
+      <img src="assets/img/logo.jpg" alt="" class="img-fluid rounded-circle">
+    </div>
+
+    <a href="Administratorhome.html" class="logo d-flex align-items-center justify-content-center">
+      <h1 class="sitename">Administrator - JSK</h1>
+    </a>
+
+    <nav id="navmenu" class="navmenu">
+      <ul>
+        <li>
+          <a href="Administratorhome.html" class="active"><i class="bi bi-house navicon"></i> Home</a>
+    
+        </li>
+        <li class="dropdown">
+          <a href="Administratorstudents.html"><i class="bi bi-person navicon"></i>Students</a>
+        </li>
+        <li>
+          <a href="Administratorcourses.html"><i class="bi bi-file-earmark-text navicon"></i>Courses</a>
+        </li>
+        <li>
+          <a href="Adminstratortimtable.html"><i class="bi bi-images navicon"></i>Time Table</a>
+        </li>
+        <li>
+          <a href="Adminstratorsports.html"><i class="bi bi-hdd-stack navicon"></i>Sports</a>
+        </li>
+        <li class="dropdown">
+          <a href="Adminstratorfaculty.html"><i class="bi bi-envelope navicon"></i>Faculty</a>
+        </li>
+        <li class="dropdown">
+            <a href="Adminstratorexams.html"><i class="bi bi-envelope navicon"></i>Exams</a>
+          </li>
+        <li></li>
+          <a href="login.html"><i class="bi bi-hdd-stack navicon"></i>Log Out</a>
+        </li>
+      </ul>
+    </nav>
+    
+    
+
+  </header>
+
+  <main class="main">
+    <section id="courses" class="courses section">
+
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+          <h2>Courses</h2>
+          <p>Browse through all available courses or search for a specific one by name.</p>
+        </div><!-- End Section Title -->
+      
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+      
+          <!-- Search Bar -->
+          <div class="row gy-4 justify-content-center">
+            <div class="col-lg-8 content">
+              <input type="text" id="searchCourse" class="form-control" placeholder="Search for a course" onkeyup="searchCourses()">
+            </div>
+          </div>
+      
+          <!-- Add Course Button -->
+          <div class="row gy-4 justify-content-center mt-4">
+            <div class="col-lg-8 content">
+              <button class="btn btn-success" onclick="openAddCourseModal()">Add Course</button>
+            </div>
+          </div>
+      
+          <!-- Courses Table -->
+          <div class="row gy-4 justify-content-center mt-4">
+            <div class="col-lg-12 content">
+              <table class="table table-striped" id="coursesTable">
+                <thead>
+                  <tr>
+                    <th>Course Name</th>
+                    <th>Code</th>
+                    <th>Instructor</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- Example Course Rows -->
+                  <tr>
+                    <td id="courseName1">Introduction to Computer Science</td>
+                    <td id="courseCode1">22CS2102</td>
+                    <td id="instructor1">RAVI BHASKAR</td>
+                    <td>
+                      <button class="btn btn-primary" onclick="editCourse(1)">Edit</button>
+                      <button class="btn btn-danger" onclick="deleteCourse(this)">Delete</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td id="courseName2">Data Structures and Algorithms</td>
+                    <td id="courseCode2">22CS102</td>
+                    <td id="instructor2">LAVANAY</td>
+                    <td>
+                      <button class="btn btn-primary" onclick="editCourse(2)">Edit</button>
+                      <button class="btn btn-danger" onclick="deleteCourse(this)">Delete</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td id="courseName3">Web Development</td>
+                    <td id="courseCode3">22CS103</td>
+                    <td id="instructor3">SURYAKIRAN</td>
+                    <td>
+                      <button class="btn btn-primary" onclick="editCourse(3)">Edit</button>
+                      <button class="btn btn-danger" onclick="deleteCourse(this)">Delete</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td id="courseName4">Machine Learning</td>
+                    <td id="courseCode4">22CS104</td>
+                    <td id="instructor4">BALU</td>
+                    <td>
+                      <button class="btn btn-primary" onclick="editCourse(4)">Edit</button>
+                      <button class="btn btn-danger" onclick="deleteCourse(this)">Delete</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td id="courseName5">Operating Systems</td>
+                    <td id="courseCode5">22CS105</td>
+                    <td id="instructor5">PRIYANKA</td>
+                    <td>
+                      <button class="btn btn-primary" onclick="editCourse(5)">Edit</button>
+                      <button class="btn btn-danger" onclick="deleteCourse(this)">Delete</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+      
+          <!-- Edit Course Modal -->
+          <div id="editCourseModal" style="display:none;">
+            <h3>Edit Course</h3>
+            <input type="text" id="editCourseName" placeholder="Course Name">
+            <input type="text" id="editCourseCode" placeholder="Course Code">
+            <input type="text" id="editInstructor" placeholder="Instructor">
+            <button onclick="saveEdit()">Save</button>
+            <button onclick="closeEditModal()">Cancel</button>
+          </div>
+      
+          <!-- Add Course Modal -->
+          <div id="addCourseModal" style="display:none;">
+            <h3>Add Course</h3>
+            <input type="text" id="newCourseName" placeholder="Course Name">
+            <input type="text" id="newCourseCode" placeholder="Course Code">
+            <input type="text" id="newInstructor" placeholder="Instructor">
+            <button onclick="addCourse()">Add</button>
+            <button onclick="closeAddModal()">Cancel</button>
+          </div>
+      
+        </div>
+      
+        <script>
+          let editIndex;
+      
+          function searchCourses() {
+            // Get the search query
+            let input = document.getElementById('searchCourse').value.toLowerCase();
+            
+            // Get the table rows
+            let table = document.getElementById('coursesTable');
+            let rows = table.getElementsByTagName('tr');
+      
+            // Loop through all rows, and hide those that don't match the search query
+            for (let i = 1; i < rows.length; i++) {
+              let courseName = rows[i].getElementsByTagName('td')[0].textContent.toLowerCase();
+              let courseCode = rows[i].getElementsByTagName('td')[1].textContent.toLowerCase();
+              
+              // Check if the course name or code matches the input
+              if (courseName.includes(input) || courseCode.includes(input)) {
+                rows[i].style.display = ''; // Show row
+              } else {
+                rows[i].style.display = 'none'; // Hide row
+              }
+            }
+          }
+      
+          function editCourse(index) {
+            editIndex = index;
+            document.getElementById('editCourseName').value = document.getElementById('courseName' + index).textContent;
+            document.getElementById('editCourseCode').value = document.getElementById('courseCode' + index).textContent;
+            document.getElementById('editInstructor').value = document.getElementById('instructor' + index).textContent;
+            document.getElementById('editCourseModal').style.display = 'block';
+          }
+      
+          function saveEdit() {
+            document.getElementById('courseName' + editIndex).textContent = document.getElementById('editCourseName').value;
+            document.getElementById('courseCode' + editIndex).textContent = document.getElementById('editCourseCode').value;
+            document.getElementById('instructor' + editIndex).textContent = document.getElementById('editInstructor').value;
+            closeEditModal();
+          }
+      
+          function closeEditModal() {
+            document.getElementById('editCourseModal').style.display = 'none';
+          }
+      
+          function deleteCourse(button) {
+            const row = button.closest('tr');
+            row.parentNode.removeChild(row);
+          }
+      
+          function openAddCourseModal() {
+            document.getElementById('addCourseModal').style.display = 'block';
+          }
+      
+          function closeAddModal() {
+            document.getElementById('addCourseModal').style.display = 'none';
+          }
+      
+          function addCourse() {
+            const courseName = document.getElementById('newCourseName').value;
+            const courseCode = document.getElementById('newCourseCode').value;
+            const instructor = document.getElementById('newInstructor').value;
+      
+            const table = document.getElementById('coursesTable').getElementsByTagName('tbody')[0];
+            const newRow = table.insertRow();
+      
+            newRow.innerHTML = `
+              <td>${courseName}</td>
+              <td>${courseCode}</td>
+              <td>${instructor}</td>
+              <td>
+                <button class="btn btn-primary" onclick="editCourse(${table.rows.length})">Edit</button>
+                <button class="btn btn-danger" onclick="deleteCourse(this)">Delete</button>
+              </td>
+            `;
+      
+            closeAddModal();
+          }
+        </script>
+      
+      </section>
+
+
+  </main>
+
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <div id="preloader"></div>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/typed.js/typed.umd.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
